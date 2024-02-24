@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class CurrencyConverter {
+
+    public static void main(String[] args) {
+        double rateUSDToEUR = 0.88; // Exchange rate from USD to EUR
+        double rateUSDToGBP = 0.73; // Exchange rate from USD to GBP
+        double rateEURToUSD = 1.14; // Exchange rate from EUR to USD
+        double rateGBPToUSD = 1.37; // Exchange rate from GBP to USD
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Select conversion direction:");
+        System.out.println("1. USD to EUR");
+        System.out.println("2. USD to GBP");
+        System.out.println("3. EUR to USD");
+        System.out.println("4. GBP to USD");
+        
+        int choice = scanner.nextInt();
+        double amount;
+        
+        switch(choice) {
+            case 1:
+                System.out.println("Enter amount in USD: ");
+                amount = scanner.nextDouble();
+                double convertedEUR = amount * rateUSDToEUR;
+                System.out.println("Converted amount: " + convertedEUR + " EUR");
+                break;
+            case 2:
+                System.out.println("Enter amount in USD: ");
+                amount = scanner.nextDouble();
+                double convertedGBP = amount * rateUSDToGBP;
+                System.out.println("Converted amount: " + convertedGBP + " GBP");
+                break;
+            case 3:
+                System.out.println("Enter amount in EUR: ");
+                amount = scanner.nextDouble();
+                double convertedUSD1 = amount * rateEURToUSD;
+                System.out.println("Converted amount: " + convertedUSD1 + " USD");
+                break;
+            case 4:
+                System.out.println("Enter amount in GBP: ");
+                amount = scanner.nextDouble();
+                double convertedUSD2 = amount * rateGBPToUSD;
+                System.out.println("Converted amount: " + convertedUSD2 + " USD");
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
+        
+        scanner.close();
+    }
+}
